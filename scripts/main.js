@@ -15,10 +15,16 @@
 ga('create', 'tracking-id', 'auto');
 ga('send', 'pageview');
 
+// window.onload = function() {
+//     init();
+// }
+
 // language reload anchor
+var modeEN = true;
+var modeTW = false;
+
 var dataReloadEN = document.querySelector(".en");
 var dataReloadTW = document.querySelector(".zh-TW");
-
 var textWhy = document.querySelector("#text-why");
 var textFeature = document.querySelector("#text-feature");
 var textAbout = document.querySelector("#text-about");
@@ -49,9 +55,19 @@ var language = {
     }
 }
 
-// define language via window hash
-// if (window.location.hash) {
-//     if (window.location.hash === "#zh-TW") {
+// function init() {
+//     if (modeEN) {
+//         textWhy.textContent = language.en.why;
+//         textFeature.textContent = language.en.feature;
+//         textAbout.textContent = language.en.about;
+//         textSlogan.textContent = language.en.slogan;
+//         sectionWhy.textContent = language.en.why;
+//         sectionFeature.textContent = language.en.feature;
+//         sectionAbout.textContent = language.en.about;
+//         sectionEarlyBird.textContent = language.en.earlyBird;
+//         textFooter.textContent = language.en.footer;
+//     }
+//     else if (modeTW) {
 //         textWhy.textContent = language.tw.why;
 //         textFeature.textContent = language.tw.feature;
 //         textAbout.textContent = language.tw.about;
@@ -64,20 +80,48 @@ var language = {
 //     }
 // }
 
-// define language reload onclick illiteration
+// define language via window hash
+if (window.location.hash) {
+    if (window.location.hash === "#zh-TW") {
+        textWhy.textContent = language.tw.why;
+        textFeature.textContent = language.tw.feature;
+        textAbout.textContent = language.tw.about;
+        textSlogan.textContent = language.tw.slogan;
+        sectionWhy.textContent = language.tw.why;
+        sectionFeature.textContent = language.tw.feature;
+        sectionAbout.textContent = language.tw.about;
+        sectionEarlyBird.textContent = language.tw.earlyBird;
+        textFooter.textContent = language.tw.footer;
+    }
+}
+
 dataReloadEN.addEventListener("click", function() {
-    location.reload(true);
+    // modeEN = true;
+    // modeTW = false;
+    // init();
+    location.reload();
 })
 
 dataReloadTW.addEventListener("click", function() {
-    textWhy.textContent = language.tw.why;
-    textFeature.textContent = language.tw.feature;
-    textAbout.textContent = language.tw.about;
-    textSlogan.textContent = language.tw.slogan;
-    sectionWhy.textContent = language.tw.why;
-    sectionFeature.textContent = language.tw.feature;
-    sectionAbout.textContent = language.tw.about;
-    sectionEarlyBird.textContent = language.tw.earlyBird;
-    textFooter.textContent = language.tw.footer;
-    location.reload(true);
+    // modeEN = false;
+    // modeTW = true;
+    // init();
+    location.reload();
 })
+
+// dataReloadEN.onclick() = function () {
+//     location.reload();
+// }
+
+// dataReloadTW.onclick() = function() {
+//     location.reload();
+//     textWhy.textContent = language.tw.why;
+//     textFeature.textContent = language.tw.feature;
+//     textAbout.textContent = language.tw.about;
+//     textSlogan.textContent = language.tw.slogan;
+//     sectionWhy.textContent = language.tw.why;
+//     sectionFeature.textContent = language.tw.feature;
+//     sectionAbout.textContent = language.tw.about;
+//     sectionEarlyBird.textContent = language.tw.earlyBird;
+//     textFooter.textContent = language.tw.footer;
+// }
