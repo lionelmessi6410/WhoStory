@@ -15,14 +15,11 @@
 ga('create', 'tracking-id', 'auto');
 ga('send', 'pageview');
 
-// window.onload = function() {
-//     init();
-// }
+window.onload = function() {
+    init();
+}
 
 // language reload anchor
-var modeEN = true;
-var modeTW = false;
-
 var dataReloadEN = document.querySelector(".en");
 var dataReloadTW = document.querySelector(".zh-TW");
 var textWhy = document.querySelector("#text-why");
@@ -55,34 +52,19 @@ var language = {
     }
 }
 
-// function init() {
-//     if (modeEN) {
-//         textWhy.textContent = language.en.why;
-//         textFeature.textContent = language.en.feature;
-//         textAbout.textContent = language.en.about;
-//         textSlogan.textContent = language.en.slogan;
-//         sectionWhy.textContent = language.en.why;
-//         sectionFeature.textContent = language.en.feature;
-//         sectionAbout.textContent = language.en.about;
-//         sectionEarlyBird.textContent = language.en.earlyBird;
-//         textFooter.textContent = language.en.footer;
-//     }
-//     else if (modeTW) {
-//         textWhy.textContent = language.tw.why;
-//         textFeature.textContent = language.tw.feature;
-//         textAbout.textContent = language.tw.about;
-//         textSlogan.textContent = language.tw.slogan;
-//         sectionWhy.textContent = language.tw.why;
-//         sectionFeature.textContent = language.tw.feature;
-//         sectionAbout.textContent = language.tw.about;
-//         sectionEarlyBird.textContent = language.tw.earlyBird;
-//         textFooter.textContent = language.tw.footer;
-//     }
-// }
-
-// define language via window hash
-if (window.location.hash) {
-    if (window.location.hash === "#zh-TW") {
+function init() {
+    if (dataReloadEN.classList.contains("onload")) {
+        textWhy.textContent = language.en.why;
+        textFeature.textContent = language.en.feature;
+        textAbout.textContent = language.en.about;
+        textSlogan.textContent = language.en.slogan;
+        sectionWhy.textContent = language.en.why;
+        sectionFeature.textContent = language.en.feature;
+        sectionAbout.textContent = language.en.about;
+        sectionEarlyBird.textContent = language.en.earlyBird;
+        textFooter.textContent = language.en.footer;
+    }
+    else if (dataReloadTW.classList.contains("onload")) {
         textWhy.textContent = language.tw.why;
         textFeature.textContent = language.tw.feature;
         textAbout.textContent = language.tw.about;
@@ -95,18 +77,42 @@ if (window.location.hash) {
     }
 }
 
-dataReloadEN.addEventListener("click", function() {
-    // modeEN = true;
-    // modeTW = false;
-    // init();
-    location.reload();
+// define language via window hash
+// if (window.location.hash) {
+//     if (window.location.hash === "#zh-TW") {
+//         textWhy.textContent = language.tw.why;
+//         textFeature.textContent = language.tw.feature;
+//         textAbout.textContent = language.tw.about;
+//         textSlogan.textContent = language.tw.slogan;
+//         sectionWhy.textContent = language.tw.why;
+//         sectionFeature.textContent = language.tw.feature;
+//         sectionAbout.textContent = language.tw.about;
+//         sectionEarlyBird.textContent = language.tw.earlyBird;
+//         textFooter.textContent = language.tw.footer;
+//     }
+// }
+
+dataReloadEN.addEventListener("click", function(e) {
+    dataReloadTW.classList.remove("onload")
+    dataReloadEN.classList.add("onload");
+    init();
+    // location.reload(true);
 })
 
-dataReloadTW.addEventListener("click", function() {
-    // modeEN = false;
-    // modeTW = true;
-    // init();
-    location.reload();
+dataReloadTW.addEventListener("click", function(e) {
+    dataReloadEN.classList.remove("onload");
+    dataReloadTW.classList.add("onload");
+    init();
+    // location.reload(true);
+    // textWhy.textContent = language.tw.why;
+    // textFeature.textContent = language.tw.feature;
+    // textAbout.textContent = language.tw.about;
+    // textSlogan.textContent = language.tw.slogan;
+    // sectionWhy.textContent = language.tw.why;
+    // sectionFeature.textContent = language.tw.feature;
+    // sectionAbout.textContent = language.tw.about;
+    // sectionEarlyBird.textContent = language.tw.earlyBird;
+    // textFooter.textContent = language.tw.footer;
 })
 
 // dataReloadEN.onclick() = function () {
