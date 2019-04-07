@@ -16,7 +16,8 @@ ga('create', 'tracking-id', 'auto');
 ga('send', 'pageview');
 
 // language reload anchor
-var dataReload = document.querySelectorAll("[data-reload]");
+var dataReloadEN = document.querySelector(".en");
+var dataReloadTW = document.querySelector(".zh-TW");
 
 var textWhy = document.querySelector("#text-why");
 var textFeature = document.querySelector("#text-feature");
@@ -49,23 +50,34 @@ var language = {
 }
 
 // define language via window hash
-if (window.location.hash) {
-    if (window.location.hash === "#zh-TW") {
-        textWhy.textContent = language.tw.why;
-        textFeature.textContent = language.tw.feature;
-        textAbout.textContent = language.tw.about;
-        textSlogan.textContent = language.tw.slogan;
-        sectionWhy.textContent = language.tw.why;
-        sectionFeature.textContent = language.tw.feature;
-        sectionAbout.textContent = language.tw.about;
-        sectionEarlyBird.textContent = language.tw.earlyBird;
-        textFooter.textContent = language.tw.footer;
-    }
-}
+// if (window.location.hash) {
+//     if (window.location.hash === "#zh-TW") {
+//         textWhy.textContent = language.tw.why;
+//         textFeature.textContent = language.tw.feature;
+//         textAbout.textContent = language.tw.about;
+//         textSlogan.textContent = language.tw.slogan;
+//         sectionWhy.textContent = language.tw.why;
+//         sectionFeature.textContent = language.tw.feature;
+//         sectionAbout.textContent = language.tw.about;
+//         sectionEarlyBird.textContent = language.tw.earlyBird;
+//         textFooter.textContent = language.tw.footer;
+//     }
+// }
 
 // define language reload onclick illiteration
-for (let i=0; i<dataReload.length; i++) {
-    dataReload[i].onclick = function () {
-        location.reload(true);
-    }
-}
+dataReloadEN.addEventListener("click", function() {
+    location.reload(true);
+})
+
+dataReloadTW.addEventListener("click", function() {
+    textWhy.textContent = language.tw.why;
+    textFeature.textContent = language.tw.feature;
+    textAbout.textContent = language.tw.about;
+    textSlogan.textContent = language.tw.slogan;
+    sectionWhy.textContent = language.tw.why;
+    sectionFeature.textContent = language.tw.feature;
+    sectionAbout.textContent = language.tw.about;
+    sectionEarlyBird.textContent = language.tw.earlyBird;
+    textFooter.textContent = language.tw.footer;
+    location.reload(true);
+})
