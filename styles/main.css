@@ -113,6 +113,14 @@ section h2 {
     border-radius: .3rem;
 }
 
+#title-loading-page {
+    font-size: 4rem;
+}
+
+.display-4 {
+    font-size: 3rem;
+}
+
 footer {
     margin-top: 4rem;
     background-color: #f7f7f7;

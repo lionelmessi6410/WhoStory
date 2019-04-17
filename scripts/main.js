@@ -29,6 +29,7 @@ var whoStoryPlusFeature2 = document.querySelector("#price-feature-2");
 var whoStoryPlusFeature3 = document.querySelector("#price-feature-3");
 var sectionEarlyBird = document.querySelector("#text-early-bird");
 var earlyBirdContent = document.querySelector("#early-bird-content");
+var notification2 = document.querySelector("#notification2");
 var textFooter = document.querySelector("#text-footer");
 
 var items = document.querySelectorAll(".nav-item");
@@ -61,6 +62,7 @@ var language = {
         whoStoryPlusFeature3: "Receive anonymous messages more precisely. It is easier for you to find someone you're interested in or with common interest.",
         earlyBird: "Early Bird",
         earlyBirdContent: "Please help us improve by taking a 30sec survey. Your feedback is highly appreciated, and, to express our thankfulness, we will send you notification once <span class=\"logo\">WhoStory</span> is available. Therefore, you will have chance to become the <strong>first user</strong>. It is exciting! Isn't it?",
+        notification2: "<i class=\"fa fa-thumbs-up\" aria-hidden=\"true\"></i>&nbsp;&nbsp;Ok, I'd Like to Help",
         footer: "We are enthusiastic students from National Tsing Hua University, who believe software can make the world a little bit better.<br>Having questions? We love to help! Drop us an email at <a href=\"chyuan@datalab.cs.nthu.edu.tw\">chyuan@datalab.cs.nthu.edu.tw</a>. We will get back to you as soon as possible."
     },
     tw: {
@@ -71,7 +73,7 @@ var language = {
         slogan: "三封信、三則故事，屬於你的人生漂書站。",
         notification: "<i class=\"fas fa-bullhorn\"></i>&nbsp;&nbsp;app上線時請通知我",
         contentWhy: "每個人的心中，都有屬於自己的故事，這些故事有的可能會讓你感到挫折、寂寞，有的可能會使你感到高興或是興奮。當某個時候這些故事壓的你喘不過氣了，你可能會希望有個人能聽你講這些故事、替你分擔情緒，但同時你希望能跟不認識的人去分享，因為有時跟一位萍水相逢的人聊天，你反而能暢所欲言、抒發你內心真正的情感，不必擔心未來還需要持續相處而有所保留。",
-        contentWhy2: "這就是為什麼我們要開發 <span class=\"logo\">WhoStory</span> ，一款全新的筆友app給你!</p>",
+        contentWhy2: "這就是為什麼我們要開發 <span class=\"logo\">WhoStory</span> ，一款全新的筆友app給你!",
         step1: "STEP 1: 寫信<br><br>每天有三封信的機會，能夠和三位你不曾遇過的人，分享屬於自己的故事。",
         step2: "STEP 2: 收信<br><br>在收到的三封信中，選擇有興趣的故事並回應給你的筆友。當然，你也可以什麼都不選。",
         step3: "STEP 3: 匿名聊天<br><br>現在你和你的筆友有五天的時間能夠聊著屬於你們的故事，在這期間你們不會知道對方的身份。",
@@ -82,10 +84,11 @@ var language = {
         whoStoryPlusHead2: "10天的信件保留<br>&nbsp;",
         whoStoryPlusHead3: "設定所有過濾器<br>&nbsp;",
         whoStoryPlusFeature1: "10倍的機會能夠分享更多的故事給其他人，有更多的機會找到對你的故事有興趣的人。",
-        whoStoryPlusFeature2: "更多的時間去考慮要不要和筆友成為朋友，避免忘記或是來不及送好友邀請的遺憾。",
+        whoStoryPlusFeature2: "更多的時間去考慮是否和筆友成為朋友，避免忘記或是來不及送邀請的遺憾。",
         whoStoryPlusFeature3: "設定更精確的過濾器來收到你可能感興趣的故事，讓你更容易找到有同樣心情、故事的筆友。",
         earlyBird: "搶先看",
         earlyBirdContent: "請花30秒幫我們填寫一下問卷，我們會仔細審視您的意見，並將您的意見作為我們產品開發的參考，提高產品品質。當產品開發完成後，您將有機會成為 <strong>第一位使用者</strong>。",
+        notification2: "<i class=\"fa fa-thumbs-up\" aria-hidden=\"true\"></i>&nbsp;&nbsp;感覺不錯！寫個問卷",
         footer: "我們是一群來自國立清華大學的學生，希望能透過coding讓世界變得更美好！<br>如果您對WhoStory有任何疑問，歡迎來信到<a href=\"chyuan@datalab.cs.nthu.edu.tw\">chyuan@datalab.cs.nthu.edu.tw</a>，我們會盡快回信給您。"
     }
 }
@@ -116,6 +119,7 @@ function init() {
         whoStoryPlusFeature2.innerHTML = language.en.whoStoryPlusFeature2;
         whoStoryPlusFeature3.innerHTML = language.en.whoStoryPlusFeature3;
         earlyBirdContent.innerHTML = language.en.earlyBirdContent;
+        notification2.innerHTML = language.en.notification2;
         textFooter.innerHTML = language.en.footer;
     }
     else if (dataReloadTW.classList.contains("onload")) {
@@ -143,6 +147,7 @@ function init() {
         whoStoryPlusFeature2.innerHTML = language.tw.whoStoryPlusFeature2;
         whoStoryPlusFeature3.innerHTML = language.tw.whoStoryPlusFeature3;
         earlyBirdContent.innerHTML = language.tw.earlyBirdContent;
+        notification2.innerHTML = language.tw.notification2;
         textFooter.innerHTML = language.tw.footer;
     }
 }
