@@ -66,7 +66,7 @@ var language = {
         footer: "We are enthusiastic students from National Tsing Hua University, who believe software can make the world a little bit better.<br>Having questions? We love to help! Drop us an email at <a href=\"chyuan@datalab.cs.nthu.edu.tw\">chyuan@datalab.cs.nthu.edu.tw</a>. We will get back to you as soon as possible."
     },
     tw: {
-        why: "為什麼 WhyStory",
+        why: "為什麼 WhoStory",
         whyLOGO: "為什麼 <span class=\"logo\">WhoStory</span>",
         feature: "產品特色",
         about: "關於我們",
